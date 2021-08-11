@@ -57,7 +57,7 @@ try{
    
 }
 catch(err){
-    res.redirect('https://mystifying-lichterman-73d159.netlify.app')
+    res.redirect('https://mystifying-lichterman-73d159.netlify.app/login')
     res.json({error: err} )
 }
 }
