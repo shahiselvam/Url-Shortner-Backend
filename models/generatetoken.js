@@ -10,7 +10,7 @@ const generateToken = (user , res) => {
         expiresIn: process.env.DB_ENV === 'testing' ? '1d' : '7d',
       });
 
-      return res.cookie('access_token' , token ,{
+        res.cookie('access_token' , token ,{
         expires: new Date(Date.now() + expiration),
          secure: true, // set to true if your using https
         httpOnly: true,
