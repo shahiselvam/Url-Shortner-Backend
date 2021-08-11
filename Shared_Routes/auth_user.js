@@ -66,7 +66,7 @@ router.post("/registration" , async (req, res) =>{
             subject: 'Node.js Account Activation',
             text: 
                  'Please click on the following link, or paste this into your browser to Activate your account:\n\n' +
-                 'http://' + req.headers.host + '/activate/' + token + '\n\n'  
+                 'https://' + mystifying-lichterman-73d159.netlify.app + '/activate/' + token + '\n\n'  
              };
              smtpTransport.sendMail(mailOptions, () => {
                console.log( 'Registered  Succesfully Account A activation e-mail has been sent to ' + req.body.email );
