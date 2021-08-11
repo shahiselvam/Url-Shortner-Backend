@@ -12,8 +12,8 @@ const generateToken = (user , res) => {
 
       return res.cookie('access_token' , token ,{
         expires: new Date(Date.now() + expiration),
-        secure: true, // set to true if your using https
-        httpOnly: true,
+        secure: false, // set to true if your using https
+        httpOnly: false,
         sameSite: "none"
 
       });
