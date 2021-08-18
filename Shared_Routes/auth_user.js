@@ -7,7 +7,7 @@ const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 const { ObjectId } = require("mongodb");
 const jwt = require("jsonwebtoken");
-const  { generateToken } = require("../models/generatetoken")
+
 
 router.post("/registration" , async (req, res) =>{
 
