@@ -18,6 +18,7 @@ async function loadApp(){
 mongo.connect();
 app.use(function(req, res, next) {
     res.header('Content-Type', 'application/json;charset=UTF-8')
+    res.header('Access-Control-Allow-Origin', 'https://mystifying-lichterman-73d159.netlify.app' )
     res.header('Access-Control-Allow-Credentials', true)
     res.header(
       'Access-Control-Allow-Headers',
