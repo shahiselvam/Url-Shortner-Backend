@@ -16,9 +16,7 @@ async function loadApp(){
     {
 
 mongo.connect();
- app.use(function (req, res, next) {
-
-    // Website you wish to allow to connect
+app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', 'https://mystifying-lichterman-73d159.netlify.app');
 
     // Request methods you wish to allow
@@ -31,26 +29,32 @@ mongo.connect();
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
 
-    // Pass to next layer of middleware
-    next();
-});
+    res.header('Content-Type', 'application/json;charset=UTF-8')
+    res.header('Access-Control-Allow-Origin', '*' )
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
+    res.header('Access-Control-Allow-Credentials', true)
+    res.header(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept'
+    )
+    next()
+  })
 app.use(cors({
-    origin: 
+    origin: [
     
-    "https://mystifying-lichterman-73d159.netlify.app"
+    'https://mystifying-lichterman-73d159.netlify.app'
     
-  ,
-  credentials: true,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE"}));
-       
+  ],
+  credentials: true}));
 app.use(express.json());
 app.use(cookieParser());
 
 app.use('/' , auth_user);
 app.use('/' , count);
 
-app.use(  (req,res,next) => {    
-const token = req.Cookies.access_token;
+app.use( (req,res,next) => {
+
+const token = req.cookies.access_token;
 
 if (!token) {
     res.redirect('https://mystifying-lichterman-73d159.netlify.app/login')
