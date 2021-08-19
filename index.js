@@ -44,6 +44,7 @@ app.use( (req,res,next) => {
 const token = req.cookies.access_token;
 
 if (!token) {
+    res.redirect('https://mystifying-lichterman-73d159.netlify.app/login')
     return res.sendStatus(403);
   }
 else{
