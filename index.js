@@ -16,16 +16,7 @@ async function loadApp(){
     {
 
 mongo.connect();
-
-app.use(cors({
-    origin: [
-    
-    'https://mystifying-lichterman-73d159.netlify.app'
-    
-  ],
-  Credentials: true,
-  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE"}));
-        app.use(function (req, res, next) {
+ app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', 'https://mystifying-lichterman-73d159.netlify.app');
@@ -43,6 +34,15 @@ app.use(cors({
     // Pass to next layer of middleware
     next();
 });
+app.use(cors({
+    origin: [
+    
+    'https://mystifying-lichterman-73d159.netlify.app'
+    
+  ],
+  Credentials: true,
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE"}));
+       
 app.use(express.json());
 app.use(cookieParser());
 
