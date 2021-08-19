@@ -40,11 +40,11 @@ app.use(function(req, res, next) {
     next()
   })
 app.use(cors({
-    origin: [
+    origin: 
     
     'https://mystifying-lichterman-73d159.netlify.app'
     
-  ],
+  ,
   credentials: true,
   methods:'GET, POST, OPTIONS, PUT, PATCH, DELETE'
 }));
