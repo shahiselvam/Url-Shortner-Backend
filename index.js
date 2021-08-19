@@ -49,15 +49,15 @@ app.use(cors({
   methods:'GET, POST, OPTIONS, PUT, PATCH, DELETE'
 }));
 app.use(express.json());
-app.use(cookieParser());
+
 
 app.use('/' , auth_user);
 app.use('/' , count);
-
+app.use(cookieParser());
 app.use( (req,res,next) => {
 
-const token = req.cookie;
-console.log(req.cookie)
+const token = req.headers.cookie.access_token;
+console.log(req.headers.cookie.access_token)
 
 if (!token) {
    
