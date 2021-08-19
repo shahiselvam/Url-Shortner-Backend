@@ -45,7 +45,9 @@ app.use(cors({
     'https://mystifying-lichterman-73d159.netlify.app'
     
   ],
-  credentials: true}));
+  credentials: true,
+  methods:'GET, POST, OPTIONS, PUT, PATCH, DELETE'
+}));
 app.use(express.json());
 app.use(cookieParser());
 
