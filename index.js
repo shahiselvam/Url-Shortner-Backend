@@ -49,7 +49,7 @@ app.use(cookieParser());
 app.use('/' , auth_user);
 app.use('/' , count);
 
-app.use( (req,res,next) => {
+app.use( function (req,res,next) => {
  res.setHeader('Access-Control-Allow-Origin', 'https://mystifying-lichterman-73d159.netlify.app');
 
     // Request methods you wish to allow
