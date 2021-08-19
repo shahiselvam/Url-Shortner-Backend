@@ -16,7 +16,9 @@ async function loadApp(){
     {
 
 mongo.connect();
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', 'https://mystifying-lichterman-73d159.netlify.app');
 
     // Request methods you wish to allow
@@ -29,15 +31,9 @@ app.use(function(req, res, next) {
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
 
-    res.header('Content-Type', 'application/json;charset=UTF-8')
-    res.header('Access-Control-Allow-Origin', '*' )
-    res.header('Access-Control-Allow-Credentials', true)
-    res.header(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
-    )
-    next()
-  })
+    // Pass to next layer of middleware
+    next();
+});
 app.use(cors({
     origin: [
     
