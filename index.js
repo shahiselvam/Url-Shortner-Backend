@@ -56,8 +56,8 @@ app.use('/' , count);
 
 app.use( (req,res,next) => {
 
-const token = req.cookies.access_token;
-console.log(req.cookies.access_token)
+const token = req.cookie;
+console.log(req.cookie)
 
 if (!token) {
    
