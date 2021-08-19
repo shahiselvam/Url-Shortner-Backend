@@ -35,13 +35,13 @@ mongo.connect();
     next();
 });
 app.use(cors({
-    "origin": 
+    origin: 
     
     "https://mystifying-lichterman-73d159.netlify.app"
     
   ,
-  "Credentials": true,
-  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE"}));
+  credentials: true,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE"}));
        
 app.use(express.json());
 app.use(cookieParser());
