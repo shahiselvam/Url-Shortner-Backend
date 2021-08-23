@@ -46,11 +46,9 @@ app.use(cookieParser());
 app.use( (req,res,next) => {
 
 const token = req.cookies.access_token;
-console.log(token);
 
 if (!token) {
-   
-    return res.send("Cookies not found");
+    return res.sendStatus(403);
   }
 else{
 try{
