@@ -45,7 +45,7 @@ app.use('/' , count);
 app.use(cookieParser());
 app.use( (req,res,next) => {
 
-const token = req.headers.cookies.access_token;
+const token = req.headers.cookies;
 console.log(token);
 
 if (!token) {
