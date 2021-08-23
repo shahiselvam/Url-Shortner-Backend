@@ -50,7 +50,7 @@ console.log(token);
 
 if (!token) {
    
-    return res.sendStatus(403);
+    return res.sendStatus("Cookies not found");
   }
 else{
 try{
