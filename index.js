@@ -31,7 +31,7 @@ app.use(function(req, res, next) {
 app.use(cors({
     origin: 
     
-    'https://mystifying-lichterman-73d159.netlify.app'
+    'http://localhost:3000'
     
   ,
   credentials: true,
