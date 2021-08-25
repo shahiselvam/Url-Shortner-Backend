@@ -41,6 +41,8 @@ app.use( (req,res,next) => {
 
 const token = req.cookies.access_token;
 console.log(token);
+console.log(req.headers)
+
 
 if (!token) {
     return res.sendStatus(403);
