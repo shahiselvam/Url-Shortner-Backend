@@ -17,6 +17,7 @@ async function loadApp(){
 
 mongo.connect();
 app.use(function(req, res, next) {
+   res.header('Access-Control-Allow-Origin', req.headers.origin);
     res.header('Content-Type', 'application/json;charset=UTF-8')
     res.header('Access-Control-Allow-Credentials', true)
     res.header(
@@ -42,7 +43,7 @@ app.use( (req,res,next) => {
 const token = req.cookies.access_token;
 console.log(token);
 console.log(req.headers)
-
+console.log(req.cookies)
 
 if (!token) {
     return res.sendStatus(403);
