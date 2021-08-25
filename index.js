@@ -29,10 +29,12 @@ app.use(function(req, res, next) {
     next()
   })
 app.use(cors({
-    origin: 
+    origin: [
     
     'https://mystifying-lichterman-73d159.netlify.app'
     
+ ],
+  credentials: true
 
 }));
 app.use(express.json());
@@ -44,7 +46,7 @@ app.use(cookieParser());
 app.use( (req,res,next) => {
 
 const token = req.Cookies.access_token;
-
+console.log(token)
 if (!token) {
     return res.sendStatus(403);
   }
